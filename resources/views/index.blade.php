@@ -32,7 +32,10 @@
                             <img src="{{ Storage::url('foto-karyawan/' . $karyawan->foto) }}" alt="" width="100">
                         </td>
                         <td>{{ $karyawan->nama_karyawan }}</td>
-                        <td>{{ \Carbon\Carbon::parse($karyawan->tanggal_lahir)->format('d-m-Y') }}</td>
+                        <td>
+                            <p>{{ \Carbon\Carbon::parse($karyawan->tanggal_lahir)->format('d-m-Y') }}</p>
+                            <p>{{ formatAge($karyawan->tanggal_lahir) }}</p>
+                        </td>
                         <td>{{ $karyawan->alamat }}</td>
                         <td>{{ $karyawan->getStatusMarried() }}</td>
                         <td>
